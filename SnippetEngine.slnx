@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="SnippetEngine.Core/SnippetEngine.Core.csproj" />
   <Project Path="SnippetEngine/SnippetEngine.csproj" />
 </Solution>

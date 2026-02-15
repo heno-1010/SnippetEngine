@@ -8,4 +8,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SnippetEngine.Core\SnippetEngine.Core.csproj" />
+  </ItemGroup>
+
 </Project>
