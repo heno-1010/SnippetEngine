@@ -10,11 +10,20 @@ namespace SnippetEngine.Core.Services
     public class SnippetManager
     {
         private List<Snippet> _snippets = new();
+        private SnippetRepository _repository;
+
+        public SnippetManager()
+        {
+            _repository = new SnippetRepository();
+            _snippets = _repository.Load();
+        }
 
         public void AddSnippet(Snippet snippet)
         {
             ArgumentNullException.ThrowIfNull(snippet); //snippetがnullだったときはエラーを返す
             _snippets.Add(snippet);
+
+            _repository.Save(_snippets);
         }
 
         public void RemoveSnippet(Snippet snippet)
