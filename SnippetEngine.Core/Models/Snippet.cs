@@ -29,5 +29,16 @@ namespace SnippetEngine.Core.Models
         {
             SetValues(title, description, code);
         }
+
+        public bool Matches(string keyword)
+        {
+            if (string.IsNullOrWhiteSpace(keyword))
+                return true;
+
+            return
+                Title.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                Description.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                Code.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0;
+        }
     }
 }
