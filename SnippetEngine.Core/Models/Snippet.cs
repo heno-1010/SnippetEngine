@@ -25,7 +25,7 @@ namespace SnippetEngine.Core.Models
             SetValues(title,description,code);
         }
 
-        public void Update(string title,string description,string code)
+        internal void Update(string title,string description,string code)
         {
             SetValues(title, description, code);
         }

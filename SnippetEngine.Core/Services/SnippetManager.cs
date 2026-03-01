@@ -41,6 +41,21 @@ namespace SnippetEngine.Core.Services
             }
         }
 
+        public bool UpdateSnippet(Guid id, string title, string description, string code)
+        {
+            var snippet = _snippets.FirstOrDefault(s => s.Id == id);
+            if(snippet != null)
+            {
+                snippet.Update(title, description, code);
+                _repository.Save(_snippets);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public IReadOnlyList<Snippet> GetAll()
         {
             return _snippets.AsReadOnly();
