@@ -26,9 +26,19 @@ namespace SnippetEngine.Core.Services
             _repository.Save(_snippets);
         }
 
-        public void RemoveSnippet(Snippet snippet)
+        public bool RemoveSnippet(Guid id)
         {
-            _snippets.Remove(snippet);
+            var snippet = _snippets.FirstOrDefault(s => s.Id == id);
+            if(snippet != null)
+            {
+                _snippets.Remove(snippet);
+                _repository.Save(_snippets);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public IReadOnlyList<Snippet> GetAll()
