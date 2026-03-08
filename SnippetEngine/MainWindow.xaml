@@ -5,8 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SnippetEngine"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="504" Width="896"
+        Background="#101622">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
+        <Grid Grid.Column="0" Background="#0F172A">
+            <StackPanel Margin="10">
+                <TextBlock Text="SnippetEngine" FontSize="24" FontWeight="Bold"/>
+
+                <TextBox Margin="0,20,10,5" Background="#1a2333" Foreground="White" BorderThickness="0" FontSize="16"/>
+                <TextBlock Text="LANGUAGES" Margin="0,30,0,10" Foreground="#94A3B8" FontSize="18"/>
+
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <DockPanel Grid.Row="0" LastChildFill="False">
+                <TextBlock Text="All Snippets" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" DockPanel.Dock="Left"/>
+                <Button Content="Add Snippet" Width="100" Height="35" VerticalAlignment="Center" DockPanel.Dock="Right"/>
+            </DockPanel>
+            <StackPanel Grid.Row="1" Margin="0,10,0,0">
+
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>
