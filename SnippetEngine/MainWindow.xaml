@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="504" Width="896"
         Background="#101622">
-    <Grid>
+    <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="260" />
             <ColumnDefinition Width="*" />
@@ -15,9 +15,9 @@
 
         <Grid Grid.Column="0" Background="#0F172A">
             <StackPanel Margin="10">
-                <TextBlock Text="SnippetEngine" FontSize="24" FontWeight="Bold"/>
+                <TextBlock Text="SnippetEngine" FontSize="24" FontWeight="Bold" Foreground="White"/>
 
-                <TextBox Margin="0,20,10,5" Background="#1a2333" Foreground="White" BorderThickness="0" FontSize="16"/>
+                <TextBox Margin="0,20,10,5" Background="#1a2333" Foreground="White" BorderThickness="0" FontSize="16" Height="35"/>
                 <TextBlock Text="LANGUAGES" Margin="0,30,0,10" Foreground="#94A3B8" FontSize="18"/>
 
             </StackPanel>
@@ -28,7 +28,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <DockPanel Grid.Row="0" LastChildFill="False">
-                <TextBlock Text="All Snippets" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" DockPanel.Dock="Left"/>
+                <TextBlock Text="All Snippets" FontSize="20" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" DockPanel.Dock="Left"/>
                 <Button Content="Add Snippet" Width="100" Height="35" VerticalAlignment="Center" DockPanel.Dock="Right"/>
             </DockPanel>
             <ItemsControl Grid.Row="1" ItemsSource="{Binding Snippets}">
@@ -42,10 +42,10 @@
                     <DataTemplate>
                         <Border Width="250" Margin="10" Padding="15" CornerRadius="10" Background="#1a2333">
                             <StackPanel>
-                                <TextBox Text="{Binding Title,Mode=OneWay}" FontSize="16" FontWeight="Bold" Foreground="White" Background="Transparent" BorderThickness="0" IsReadOnly="True"/>
-                                <TextBox Text="{Binding Description,Mode=OneWay}" Foreground="#94A3B8" Margin="0,5,0,10" Background="Transparent" BorderThickness="0" IsReadOnly="True" TextWrapping="Wrap"/>
-                                <Border Background="#0F172A" Padding="8" CornerRadius="5">
-                                    <TextBox Text="{Binding Code,Mode=OneWay}" FontFamily="Consolas" Foreground="#CBD5F5" Background="#0F172A" Padding="8" IsReadOnly="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+                                <TextBox Text="{Binding Title,Mode=OneWay}" FontSize="16" FontWeight="Bold" Foreground="White" Background="Transparent" BorderThickness="0" IsReadOnly="True" FocusVisualStyle="{x:Null}" Cursor="IBeam"/>
+                                <TextBox Text="{Binding Description,Mode=OneWay}" Foreground="#94A3B8" Margin="0,5,0,10" Background="Transparent" BorderThickness="0" IsReadOnly="True" FocusVisualStyle="{x:Null}" Cursor="IBeam"/>
+                                <Border Padding="8" CornerRadius="5">
+                                    <TextBox Text="{Binding Code,Mode=OneWay}" FontFamily="Consolas" Foreground="#CBD5F5" Background="#0F172A" Padding="8" IsReadOnly="True" FocusVisualStyle="{x:Null}" Cursor="IBeam"/>
                                 </Border>
                             </StackPanel>
                         </Border>
