@@ -9,6 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="snippets.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="snippets.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\SnippetEngine.Core\SnippetEngine.Core.csproj" />
   </ItemGroup>
 

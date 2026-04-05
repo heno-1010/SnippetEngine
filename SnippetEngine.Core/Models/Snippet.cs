@@ -6,10 +6,11 @@ namespace SnippetEngine.Core.Models
 {
     public class Snippet
     {
-        public Guid Id { get; private set; } = Guid.NewGuid();
-        public string Title { get; private set; }
-        public string Description { get; private set; }
-        public string Code { get; private set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public string Code { get; set; }
+        public Snippet() { }
 
         private void SetValues(string title, string description, string code)
         {
