@@ -22,5 +22,12 @@ namespace SnippetEngine
             InitializeComponent();
             DataContext = new MainViewModel();
         }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            var AddSnippetWindow = new AddSnippet();
+            AddSnippetWindow.Owner = this;
+            AddSnippetWindow.ShowDialog();
+        }
     }
 }
