@@ -25,9 +25,12 @@ namespace SnippetEngine
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            var AddSnippetWindow = new AddSnippet();
-            AddSnippetWindow.Owner = this;
-            AddSnippetWindow.ShowDialog();
+            var addWindow = new AddSnippet();
+            addWindow.Owner = this;
+            addWindow.ShowDialog();
+
+            // 再読み込み
+            DataContext = new MainViewModel();
         }
     }
 }
